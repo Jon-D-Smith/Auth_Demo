@@ -1,0 +1,23 @@
+{
+  "name": "Auth_Demo",
+  "version": "1.0.0",
+  "description": "Building a node authentication system from \"scratch\" using the bcrypt library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jon-D-Smith/Auth_Demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jon-D-Smith/Auth_Demo/issues"
+  },
+  "homepage": "https://github.com/Jon-D-Smith/Auth_Demo#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1"
+  }
+}
