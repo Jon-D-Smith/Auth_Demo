@@ -22,6 +22,15 @@ app.set('views', 'views');
 app.use(express.urlencoded({ extended: true }))
 app.use(session({ secret: 'notagoodsecret' }))
 
+
+//MiddleWare
+const requireLogin = (req, res, next) => {
+    if (!req.session.user_id) {
+        return res.redirect('/login')
+    }
+    next();
+}
+
 app.get('/', (req, res) => {
     res.send('this is the home page')
 })
@@ -64,10 +73,8 @@ app.post('/logout', (req, res) => {
     res.redirect("/login")
 })
 
-app.get('/secret', (req, res) => {
-    if (!req.session.user_id) {
-        res.redirect('/login');
-    }
+app.get('/secret', requireLogin, (req, res) => {
+
     res.render('secret')
 })
 
